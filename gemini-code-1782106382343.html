@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zavier Lee | Finance & Investment Analysis</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        parchment: {
+                            DEFAULT: '#F5F4F0',
+                            dark: '#E8E6DF'
+                        },
+                        burgundy: {
+                            DEFAULT: '#7A1315',
+                            dark: '#610000',
+                            light: '#9A1B1E'
+                        },
+                        charcoal: {
+                            DEFAULT: '#27272A',
+                            light: '#52525B'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #F5F4F0;
+            color: #27272A;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Scroll Reveal Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* SPA Page Transitions */
+        .page-section {
+            display: none;
+            animation: fadeInPage 0.6s cubic-bezier(0.5, 0, 0, 1) forwards;
+        }
+        
+        .page-section.active {
+            display: block;
+        }
+
+        @keyframes fadeInPage {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col selection:bg-burgundy selection:text-white">
+
+    <nav class="fixed w-full z-50 bg-parchment/90 backdrop-blur-md border-b border-burgundy/20 transition-all duration-300">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12 py-4 flex justify-between items-center">
+            <a href="#profile" class="nav-link font-serif font-bold text-xl tracking-tight text-charcoal hover:text-burgundy transition-colors">ZL.</a>
+            <div class="space-x-6 lg:space-x-8 text-sm font-medium text-charcoal-light hidden md:block">
+                <a href="#profile" class="nav-link hover:text-burgundy transition-colors">Profile</a>
+                <a href="#ventures" class="nav-link hover:text-burgundy transition-colors">Ventures</a>
+                <a href="#research" class="nav-link hover:text-burgundy transition-colors">Research</a>
+                <a href="#workflow" class="nav-link hover:text-burgundy transition-colors">AI</a>
+                <a href="#experience" class="nav-link hover:text-burgundy transition-colors">Experience</a>
+                <a href="#reading" class="nav-link hover:text-burgundy transition-colors">Reading</a>
+                <a href="#services" class="nav-link hover:text-burgundy transition-colors">Services</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-[1400px] mx-auto px-6 lg:px-12 pt-24 pb-20 flex-grow w-full">
+
+        <div id="profile" class="page-section active">
+            <section class="py-10 md:py-16 reveal w-full">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 items-center">
+                    
+                    <div class="md:col-span-6 mb-8 md:mb-0">
+                        <div class="relative w-full mx-auto aspect-[4/3] bg-white p-2 border border-burgundy/15 shadow-sm transform transition-transform duration-700 hover:-translate-y-1">
+                            <img src="Voyage.jpg" alt="Voyage" class="w-full h-full object-cover grayscale-[15%] hover:grayscale-0 transition-all duration-700">
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-6">
+                        <p class="text-burgundy font-medium tracking-widest uppercase text-xs mb-4">Portfolio</p>
+                        <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-4 text-charcoal">
+                            Zavier Lee
+                        </h1>
+                        <h2 class="text-xl md:text-2xl font-serif italic text-charcoal-light mb-8">
+                            Finance & Investment Analysis.
+                        </h2>
+                        
+                        <div class="mb-10 pl-4 border-l-2 border-burgundy">
+                            <h3 class="font-sans text-sm font-bold uppercase tracking-widest text-burgundy mb-2">Explore. Direct. Act.</h3>
+                            <p class="text-base lg:text-lg text-charcoal-light leading-relaxed font-light">
+                                Life is the continuous translation of thought into action. Know your drives and seek your North Star, but do not be grounded by the absence of a perfect map. Only through motion do you generate the new inputs that will serve as your compass.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#services" class="nav-link px-6 py-3 bg-burgundy text-white text-sm font-medium hover:bg-burgundy-dark transition-colors duration-300 border border-burgundy flex items-center shadow-sm">
+                                Explore Advisory Services <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </a>
+                            <a href="#research" class="nav-link px-6 py-3 bg-transparent text-charcoal text-sm font-medium border border-charcoal/20 hover:border-burgundy hover:text-burgundy transition-colors duration-300 flex items-center">
+                                Read My Research <i data-lucide="book-open" class="ml-2 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+
+            <hr class="border-t border-burgundy/20 my-16">
+
+            <section id="journey" class="py-12 md:py-16 reveal">
+                <div class="mb-12">
+                    <h3 class="font-serif text-3xl font-bold mb-3 text-charcoal leading-tight">My Journey.</h3>
+                    <p class="text-charcoal-light font-light max-w-3xl text-sm md:text-base">A visual ledger of my professional ventures, policy engagements, and creative disciplines.</p>
+                </div>
+
+                <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+                    
+                    <div class="break-inside-avoid rounded-xl overflow-hidden bg-white shadow-sm border border-charcoal/10 group">
+                        <div class="overflow-hidden">
+                            <img src="BVIA 7.jpg" alt="Profile: research competition" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="p-5">
+                            <p class="text-[10px] uppercase tracking-widest text-burgundy font-bold mb-1">Profile</p>
+                            <h4 class="font-serif text-lg font-bold text-charcoal mb-2 leading-tight">Research Competition</h4>
+                            <p class="text-xs text-charcoal-light leading-relaxed">Presenting fundamental valuation insights at the Budding Value Investor Award.</p>
+                        </div>
+                    </div>
+
+                    <div class="break-inside-avoid rounded-xl overflow-hidden bg-white shadow-sm border border-charcoal/10 group">
+                        <div class="overflow-hidden">
+                            <img src="GEMA Podcast.jpeg" alt="GEMA Podcast" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="p-5">
+                            <p class="text-[10px] uppercase tracking-widest text-burgundy font-bold mb-1">Venture: GEMA</p>
+                            <h4 class="font-serif text-lg font-bold text-charcoal mb-2 leading-tight">"Projek 30" Podcast</h4>
+                            <p class="text-xs text-charcoal-light leading-relaxed">Orchestrating deep-dive conversations with Malaysian industry leaders to map the socio-economic ecosystem.</p>
+                        </div>
+                    </div>
+
+                    <div class="break-inside-avoid rounded-xl overflow-hidden bg-white shadow-sm border border-charcoal/10 group">
+                        <div class="overflow-hidden">
+                            <img src="Drum Concert.jpeg" alt="Drum Concert" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="p-5">
+                            <p class="text-[10px] uppercase tracking-widest text-burgundy font-bold mb-1">Creative Discipline</p>
+                            <h4 class="font-serif text-lg font-bold text-charcoal mb-2 leading-tight">24 Festive Drumming</h4>
+                            <p class="text-xs text-charcoal-light leading-relaxed">Synchronized execution and rhythmic composition on the main stage.</p>
+                        </div>
+                    </div>
+
+                    <div class="break-inside-avoid rounded-xl overflow-hidden bg-white shadow-sm border border-charcoal/10 group">
+                        <div class="overflow-hidden">
+                            <img src="Semiconductor Forum 1.0.jpeg" alt="Semiconductor Forum 1.0" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="p-5">
+                            <p class="text-[10px] uppercase tracking-widest text-burgundy font-bold mb-1">Venture: GEMA</p>
+                            <h4 class="font-serif text-lg font-bold text-charcoal mb-2 leading-tight">Semiconductor Forum 1.0</h4>
+                            <p class="text-xs text-charcoal-light leading-relaxed">Deepening technical understanding of the global supply chain and local fab capacities.</p>
+                        </div>
+                    </div>
+
+                    <div class="break-inside-avoid rounded-xl overflow-hidden bg-white shadow-sm border border-charcoal/10 group">
+                        <div class="overflow-hidden">
+                            <img src="Coffee 2.jpeg" alt="Coffee" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="p-5">
+                            <p class="text-[10px] uppercase tracking-widest text-burgundy font-bold mb-1">The Workflow</p>
+                            <h4 class="font-serif text-lg font-bold text-charcoal mb-2 leading-tight">Moments of Pause</h4>
+                            <p class="text-xs text-charcoal-light leading-relaxed">Fueling late-night DCF modeling, deep-research, and startup strategy sessions.</p>
+                        </div>
+                    </div>
+
+                    <div class="break-inside-avoid rounded-xl overflow-hidden bg-white shadow-sm border border-charcoal/10 group">
+                        <div class="overflow-hidden">
+                            <img src="DUN Visit.jpeg" alt="DUN Visit" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="p-5">
+                            <p class="text-[10px] uppercase tracking-widest text-burgundy font-bold mb-1">Public Policy</p>
+                            <h4 class="font-serif text-xl text-charcoal-light leading-relaxed">Selangor State Exco</h4>
+                            <p class="text-xs text-charcoal-light leading-relaxed">Bridging the gap between government initiatives and private sector realities.</p>
+                        </div>
+                    </div>
+
+                    <div class="break-inside-avoid rounded-xl overflow-hidden bg-white shadow-sm border border-charcoal/10 group">
+                        <div class="overflow-hidden">
+                            <img src="Semiconductor Forum 2.0.jpeg" alt="Semiconductor Forum 2.0" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="p-5">
+                            <p class="text-[10px] uppercase tracking-widest text-burgundy font-bold mb-1">Venture: GEMA</p>
+                            <h4 class="font-serif text-lg font-bold text-charcoal mb-2 leading-tight">Semiconductor Forum 2.0</h4>
+                            <p class="text-xs text-charcoal-light leading-relaxed">Engaging with industry experts to track macro developments in tech.</p>
+                        </div>
+                    </div>
+
+                    <div class="break-inside-avoid rounded-xl overflow-hidden bg-white shadow-sm border border-charcoal/10 group">
+                        <div class="overflow-hidden">
+                            <img src="Drum Concert 2.jpeg" alt="Drum Concert 2" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="p-5">
+                            <p class="text-[10px] uppercase tracking-widest text-burgundy font-bold mb-1">Performance</p>
+                            <h4 class="font-serif text-lg font-bold text-charcoal mb-2 leading-tight">Orchestrating Rhythm</h4>
+                            <p class="text-xs text-charcoal-light leading-relaxed">Composing and executing original pieces for an audience of over 500 guests.</p>
+                        </div>
+                    </div>
+
+                    <div class="break-inside-avoid rounded-xl overflow-hidden bg-white shadow-sm border border-charcoal/10 group">
+                        <div class="overflow-hidden">
+                            <img src="Semiconductor Forum 2.0 2.jpeg" alt="Semiconductor Forum 2.0 Extension" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="p-5">
+                            <p class="text-[10px] uppercase tracking-widest text-burgundy font-bold mb-1">Venture: GEMA</p>
+                            <h4 class="font-serif text-lg font-bold text-charcoal mb-2 leading-tight">Industry Connections</h4>
+                            <p class="text-xs text-charcoal-light leading-relaxed">Translating policy and sector research into real-world professional connections.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="break-inside-avoid rounded-xl overflow-hidden bg-white shadow-sm border border-charcoal/10 group">
+                        <div class="overflow-hidden">
+                            <img src="Meeting with PTPTN Officers.jpg" alt="Meeting with PTPTN Officers" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="p-5">
+                            <p class="text-[10px] uppercase tracking-widest text-burgundy font-bold mb-1">Venture: GEMA</p>
+                            <h4 class="font-serif text-lg font-bold text-charcoal mb-2 leading-tight">Policy Advocacy</h4>
+                            <p class="text-xs text-charcoal-light leading-relaxed">Presenting structural financing recommendations to PTPTN officers to address national student debt.</p>
+                        </div>
+                    </div>
+
+                    <div class="break-inside-avoid rounded-xl overflow-hidden bg-white shadow-sm border border-charcoal/10 group">
+                        <div class="overflow-hidden">
+                            <img src="Drum Competition.jpeg" alt="Drum Competition" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="p-5">
+                            <p class="text-[10px] uppercase tracking-widest text-burgundy font-bold mb-1">Creative Discipline</p>
+                            <h4 class="font-serif text-lg font-bold text-charcoal mb-2 leading-tight">Competitive Execution</h4>
+                            <p class="text-xs text-charcoal-light leading-relaxed">Where complex planning meets high-stakes delivery.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <div id="ventures" class="page-section">
+            <section class="py-12 reveal">
+                <h3 class="font-serif text-3xl font-bold mb-10 text-charcoal">Strategic Ventures</h3>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="p-8 md:p-10 border border-burgundy/10 bg-white/50 hover:bg-white transition-colors duration-300 hover:border-burgundy/40 group flex flex-col h-full lg:col-span-2">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-serif text-2xl font-bold text-burgundy">Arvia</h4>
+                            <i data-lucide="briefcase" class="text-burgundy/50 w-6 h-6"></i>
+                        </div>
+                        <p class="text-xs uppercase tracking-widest text-charcoal-light mb-8 font-bold flex items-center flex-wrap gap-y-2">
+                            Founder <span class="mx-2 text-burgundy/30 hidden sm:inline">|</span> <span class="text-burgundy italic normal-case tracking-normal text-sm">"Seemingly irrelevant data silos cost SMEs immense value through operational drag and invisible financing barriers."</span>
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6 max-w-6xl">
+                            <div>
+                                <h5 class="text-[10px] uppercase tracking-widest text-burgundy font-bold mb-2 border-b border-burgundy/20 pb-1">The Connection Gap</h5>
+                                <p class="text-sm text-charcoal-light leading-relaxed">Every month, the owner of a Malaysian SME does three things manually that should be automatic: they chase customers who haven't paid, they reconcile bank statements against invoices one by one, and they walk into a bank and get rejected because they have no collateral — even though they have been paying suppliers reliably for years. None of these problems exist because the SME is badly run. They exist because the data that proves the business is healthy sits in three places that don't talk to each other: the accounting software, the bank account, and the customer's payment history.</p>
+                            </div>
+                            
+                            <div>
+                                <h5 class="text-[10px] uppercase tracking-widest text-burgundy font-bold mb-2 border-b border-burgundy/20 pb-1">The Orchestration Pipeline</h5>
+                                <p class="text-sm text-charcoal-light leading-relaxed">Your financial data already exists — invoices sent, payments made, bank transactions recorded — but it sits scattered across systems that never talk to each other. Arvia builds the connection layer between all of it, automating reconciliation, giving you a live view of who owes you and when, and structuring your payment behavior into a verified financial identity. The result is a business that runs on real numbers instead of gut feel — and a track record that banks can finally read.</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6 mb-8 max-w-6xl">
+                            <div class="bg-parchment border border-burgundy/10 rounded-sm p-6 shadow-sm hover:border-burgundy/30 transition-colors">
+                                <i data-lucide="line-chart" class="w-5 h-5 text-burgundy mb-3"></i>
+                                <h6 class="text-sm font-bold text-charcoal mb-2 leading-tight">Real-Time<br>Liquidity</h6>
+                                <p class="text-xs text-charcoal-light leading-relaxed">See exactly where your capital is deployed or available in real-time.</p>
+                            </div>
+                            <div class="bg-parchment border border-burgundy/10 rounded-sm p-6 shadow-sm hover:border-burgundy/30 transition-colors">
+                                <i data-lucide="clock" class="w-5 h-5 text-burgundy mb-3"></i>
+                                <h6 class="text-sm font-bold text-charcoal mb-2 leading-tight">Operational<br>Efficiency</h6>
+                                <p class="text-xs text-charcoal-light leading-relaxed">Your staff spends time on financial analysis rather than manual firefighting.</p>
+                            </div>
+                            <div class="bg-parchment border border-burgundy/10 rounded-sm p-6 shadow-sm hover:border-burgundy/30 transition-colors">
+                                <i data-lucide="shield-check" class="w-5 h-5 text-burgundy mb-3"></i>
+                                <h6 class="text-sm font-bold text-charcoal mb-2 leading-tight">Institutional<br>Bankability</h6>
+                                <p class="text-xs text-charcoal-light leading-relaxed">Structure historical payment behavior to build institutional trust without hard collateral.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="max-w-6xl mb-10">
+                            <h5 class="text-[10px] uppercase tracking-widest text-burgundy font-bold mb-2 border-b border-burgundy/20 pb-1">Architecture</h5>
+                            <p class="text-sm text-charcoal-light leading-relaxed">Built as a Technical Service Provider (TSP), Arvia orchestrates data without directly holding funds, neutralizing regulatory risk. The platform is currently in its early stages of beta development and insights gathering.</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 mt-auto max-w-6xl">
+                            <div class="overflow-hidden border border-burgundy/15 rounded-sm aspect-video bg-[#E8E6DF] relative group/img shadow-sm">
+                                <img src="Arvia Gary.jpeg" alt="Arvia Platform Testing" class="w-full h-full object-cover object-[50%_15%] transition-transform duration-700 group-hover/img:scale-105">
+                            </div>
+                            <div class="overflow-hidden border border-burgundy/15 rounded-sm aspect-video bg-[#E8E6DF] relative group/img shadow-sm">
+                                <img src="Arvia.jpg" alt="Arvia Brand Architecture" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover/img:scale-105">
+                            </div>
+                            <div class="overflow-hidden border border-burgundy/15 rounded-sm aspect-video bg-[#E8E6DF] relative group/img shadow-sm">
+                                <img src="Arvia 3.0.jpeg" alt="Arvia Team Meeting" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover/img:scale-105">
+                            </div>
+                            <div class="overflow-hidden border border-burgundy/15 rounded-sm aspect-video bg-[#E8E6DF] relative group/img shadow-sm">
+                                <img src="Arvia 4.0.jpeg" alt="Arvia Strategy Session" class="w-full h-full object-cover object-center transition-transform duration-700 group-hover/img:scale-105">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-8 md:p-10 border border-burgundy/10 bg-white/50 hover:bg-white transition-colors duration-300 hover:border-burgundy/40 group lg:col-span-2 flex flex-col">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-serif text-2xl font-bold text-burgundy">GEMA Malaysia</h4>
+                            <i data-lucide="users" class="text-burgundy/50 w-6 h-6"></i>
+                        </div>
+                        <p class="text-xs uppercase tracking-widest text-charcoal-light mb-6 font-bold">President & Co-Founder</p>
+                        
+                        <div class="mb-10 max-w-5xl">
+                            <p class="text-sm text-charcoal leading-relaxed font-medium mb-2 border-l-2 border-burgundy pl-4">
+                                <strong class="text-burgundy uppercase tracking-widest text-[10px] block mb-1">The Mission</strong>
+                                Addressing the awareness gap in Malaysia's semiconductor ambitions by connecting youth with industry leaders, academia, and policymakers through education, community engagement, and policy research.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 max-w-6xl">
+                            <div>
+                                <h5 class="text-sm font-bold text-charcoal mb-2 flex items-center"><i data-lucide="mic-2" class="w-4 h-4 mr-2 text-burgundy-light"></i> Convening Sectors</h5>
+                                <p class="text-xs text-charcoal-light leading-relaxed">Organized two major Semiconductor Forums over two years with Monash University and Universiti Malaya. Hosted 3 expert panels featuring 7 speakers (e.g., NXP, Selangor State Govt) to discuss global value chain positioning with 150+ participants.</p>
+                            </div>
+                            <div>
+                                <h5 class="text-sm font-bold text-charcoal mb-2 flex items-center"><i data-lucide="bar-chart-3" class="w-4 h-4 mr-2 text-burgundy-light"></i> Digital Education</h5>
+                                <p class="text-xs text-charcoal-light leading-relaxed">Scaled the platform to 250+ followers, generating 100,000+ views across 55+ original posts. Produced the "Projek 30" podcast series, accumulating 10,000+ views to demystify complex technical and policy subjects.</p>
+                            </div>
+                            <div>
+                                <h5 class="text-sm font-bold text-charcoal mb-2 flex items-center"><i data-lucide="file-text" class="w-4 h-4 mr-2 text-burgundy-light"></i> Policy Advocacy</h5>
+                                <p class="text-xs text-charcoal-light leading-relaxed">Spearheaded a youth-driven policy paper addressing structural issues in the PTPTN financing system. Analyzed 200+ survey responses and drafted three actionable recommendations intended for ministerial submission.</p>
+                            </div>
+                            <div>
+                                <h5 class="text-sm font-bold text-charcoal mb-2 flex items-center"><i data-lucide="network" class="w-4 h-4 mr-2 text-burgundy-light"></i> Organization Building</h5>
+                                <p class="text-xs text-charcoal-light leading-relaxed">Recruited and led an 8-person core team across operations, partnerships, and program delivery. Established scalable internal processes to transition GEMA into a sustainable institution.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-charcoal/5 p-5 rounded-sm border border-charcoal/10 mb-8 max-w-5xl">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-burgundy block mb-2">Strategic Outcome</span>
+                            <p class="text-sm text-charcoal-light leading-relaxed">
+                                Established a recognized cross-sector nexus that actively integrates young Malaysians into the national dialogue on talent development and industrial strategy.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6 mt-auto w-full max-w-6xl">
+                            <div class="aspect-video bg-[#E8E6DF] rounded-sm border border-burgundy/15 overflow-hidden shadow-sm group/img">
+                                <img src="Semiconductor Forum 2.0 2.jpeg" alt="GEMA Semiconductor Forum" class="w-full h-full object-cover object-[50%_75%] transition-transform duration-700 group-hover/img:scale-105">
+                            </div>
+                            <div class="aspect-video bg-[#E8E6DF] rounded-sm border border-burgundy/15 overflow-hidden shadow-sm group/img">
+                                <img src="GEMA Podcast.jpeg" alt="GEMA Podcast Production" class="w-full h-full object-cover object-[50%_75%] transition-transform duration-700 group-hover/img:scale-105">
+                            </div>
+                            <div class="aspect-video bg-[#E8E6DF] rounded-sm border border-burgundy/15 overflow-hidden shadow-sm group/img">
+                                <img src="Meeting with PTPTN Officers.jpg" alt="Meeting with PTPTN Officers" class="w-full h-full object-cover object-[50%_75%] transition-transform duration-700 group-hover/img:scale-105">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="research" class="page-section relative">
+            <section class="py-12 reveal relative overflow-hidden min-h-[80vh]">
+                
+                <div class="absolute -top-16 -right-16 w-96 h-96 opacity-10 pointer-events-none transform rotate-[30deg] z-0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Branch_drawing.svg" alt="Botanical Sketch" class="w-full h-full object-contain">
+                </div>
+                <div class="absolute -bottom-20 -left-20 w-[28rem] h-[28rem] opacity-10 pointer-events-none transform -rotate-[150deg] z-0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Branch_drawing.svg" alt="Botanical Sketch" class="w-full h-full object-contain">
+                </div>
+
+                <div class="relative z-10">
+                    <div class="flex items-center justify-between mb-10">
+                        <h3 class="font-serif text-3xl font-bold text-charcoal">Research & Publications</h3>
+                        <i data-lucide="library" class="text-burgundy/40 w-6 h-6 hidden md:block"></i>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+                        <div class="flex flex-col bg-charcoal border border-burgundy/30 shadow-[6px_6px_0px_0px_#7A1315] hover:-translate-y-1 transition-transform duration-300 group">
+                            <div class="aspect-[4/3] w-full overflow-hidden border-b border-burgundy/30 relative">
+                                <img src="KL.jpg" alt="KL City Center" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-500">
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <p class="text-[10px] uppercase tracking-widest text-burgundy-light font-bold mb-3">Market Commentary</p>
+                                <h4 class="font-serif text-xl font-bold text-parchment mb-2 leading-tight">What My Initiative Has Taught Me About Selling Into Malaysian B2B Market</h4>
+                                <p class="text-sm text-parchment-dark/80 leading-relaxed mb-6 font-light flex-grow">
+                                    Building an SME solution led me to conversations with industry leaders that revealed the underlying operating system of Malaysian SMEs and its impact on innovation.
+                                </p>
+                                <a href="https://substack.com/@zavierlee/note/p-202385055?utm_source=notes-share-action&r=8jp5be" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 w-full text-xs font-medium text-charcoal bg-parchment hover:bg-burgundy hover:text-white transition-all duration-300 mt-auto">
+                                    <i data-lucide="external-link" class="w-4 h-4 mr-2"></i> Read on Substack
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col bg-charcoal border border-burgundy/30 shadow-[6px_6px_0px_0px_#7A1315] hover:-translate-y-1 transition-transform duration-300 group">
+                            <div class="aspect-[4/3] w-full overflow-hidden border-b border-burgundy/30 relative">
+                                <img src="Westport.jpg" alt="Port Klang Terminal" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-500">
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <p class="text-[10px] uppercase tracking-widest text-burgundy-light font-bold mb-3">Equity Research</p>
+                                <h4 class="font-serif text-xl font-bold text-parchment mb-2 leading-tight">Westports Holdings Berhad</h4>
+                                <p class="text-sm text-parchment-dark/80 leading-relaxed mb-6 font-light flex-grow">
+                                    CFA Institute Research Challenge report. Institutional-grade valuation factoring in global logistics disruptions like the Red Sea crisis.
+                                </p>
+                                <a href="Sunway University Team C - Westports Holdings Berhad.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 w-full text-xs font-medium text-charcoal bg-parchment hover:bg-burgundy hover:text-white transition-all duration-300">
+                                    <i data-lucide="file-text" class="w-4 h-4 mr-2"></i> Read Equity Report
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col bg-charcoal border border-burgundy/30 shadow-[6px_6px_0px_0px_#7A1315] hover:-translate-y-1 transition-transform duration-300 group">
+                            <div class="aspect-[4/3] w-full overflow-hidden border-b border-burgundy/30 relative">
+                                <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=800&auto=format&fit=crop" alt="Medical Laboratory" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-500">
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <p class="text-[10px] uppercase tracking-widest text-burgundy-light font-bold mb-3">Equity Research</p>
+                                <h4 class="font-serif text-xl font-bold text-parchment mb-2 leading-tight">Abbott Laboratories (ABT)</h4>
+                                <p class="text-sm text-parchment-dark/80 leading-relaxed mb-6 font-light flex-grow">
+                                    Deep-dive evaluation of operating segments (Medical Devices, Diagnostics), assessing post-pandemic revenue normalisation and legal headwinds.
+                                </p>
+                                <a href="Abbott Laboratories (ABT) Analysis.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 w-full text-xs font-medium text-charcoal bg-parchment hover:bg-burgundy hover:text-white transition-all duration-300">
+                                    <i data-lucide="file-text" class="w-4 h-4 mr-2"></i> Read Equity Report
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col bg-charcoal border border-burgundy/30 shadow-[6px_6px_0px_0px_#7A1315] hover:-translate-y-1 transition-transform duration-300 group">
+                            <div class="aspect-[4/3] w-full overflow-hidden border-b border-burgundy/30 relative">
+                                <img src="CATL.jpg" alt="CATL Exhibition" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-500">
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <p class="text-[10px] uppercase tracking-widest text-burgundy-light font-bold mb-3">Sector Intelligence</p>
+                                <h4 class="font-serif text-xl font-bold text-parchment mb-2 leading-tight">EV Battery Supply Chain & CATL</h4>
+                                <p class="text-sm text-parchment-dark/80 leading-relaxed mb-6 font-light flex-grow">
+                                    Comprehensive analysis of the global battery supply chain, raw material economics, and a presentation deck detailing CATL's market dominance.
+                                </p>
+                                <div class="flex flex-col gap-2 mt-auto">
+                                    <a href="Battery Sector Financially.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 w-full text-xs font-medium text-charcoal bg-parchment hover:bg-burgundy hover:text-white transition-all duration-300">
+                                        <i data-lucide="file-text" class="w-4 h-4 mr-2"></i> Sector Analysis
+                                    </a>
+                                    <a href="2024 BVIA_Presentation Slide Submission_Zavier Lee.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 w-full text-xs font-medium text-parchment border border-parchment/30 hover:bg-burgundy hover:border-burgundy transition-all duration-300">
+                                        <i data-lucide="monitor-play" class="w-4 h-4 mr-2"></i> Presentation Deck
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col bg-charcoal border border-burgundy/30 shadow-[6px_6px_0px_0px_#7A1315] hover:-translate-y-1 transition-transform duration-300 group">
+                            <div class="aspect-[4/3] w-full overflow-hidden border-b border-burgundy/30 relative">
+                                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=800&auto=format&fit=crop" alt="Solar Panels" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-500">
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <p class="text-[10px] uppercase tracking-widest text-burgundy-light font-bold mb-3">Sector Intelligence</p>
+                                <h4 class="font-serif text-xl font-bold text-parchment mb-2 leading-tight">Renewable Energy Ecosystem</h4>
+                                <p class="text-sm text-parchment-dark/80 leading-relaxed mb-6 font-light flex-grow">
+                                    Market research mapping the ASEAN Power Grid and utility-scale solar infrastructure, analyzing capital allocation, and profiling key players.
+                                </p>
+                                <a href="Renewable Energy Market Research.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 w-full text-xs font-medium text-charcoal bg-parchment hover:bg-burgundy hover:text-white transition-all duration-300 mt-auto">
+                                    <i data-lucide="file-text" class="w-4 h-4 mr-2"></i> Read Market Report
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col bg-charcoal border border-burgundy/30 shadow-[6px_6px_0px_0px_#7A1315] hover:-translate-y-1 transition-transform duration-300 group">
+                            <div class="aspect-[4/3] w-full overflow-hidden border-b border-burgundy/30 relative">
+                                <img src="https://images.unsplash.com/photo-1531747056595-07f6cbbe10ad?q=80&w=800&auto=format&fit=crop" alt="Working Mother" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-500">
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <p class="text-[10px] uppercase tracking-widest text-burgundy-light font-bold mb-3">Macroeconomics & Policy</p>
+                                <h4 class="font-serif text-xl font-bold text-parchment mb-2 leading-tight">Gender Pay & Maternity Leave</h4>
+                                <p class="text-sm text-parchment-dark/80 leading-relaxed mb-6 font-light flex-grow">
+                                    Position paper co-authored for the Association of Malaysian Economics Undergraduates (AMEU) addressing the economic impact of the care burden and systemic wage gaps.
+                                </p>
+                                <a href="Women's Pay and Maternity Leave.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 w-full text-xs font-medium text-charcoal bg-parchment hover:bg-burgundy hover:text-white transition-all duration-300 mt-auto">
+                                    <i data-lucide="landmark" class="w-4 h-4 mr-2"></i> Read Policy Paper
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="workflow" class="page-section">
+            <section class="py-12 reveal">
+                <h3 class="font-serif text-3xl font-bold mb-4 text-charcoal">How I Use AI in Financial Research and Analysis</h3>
+                <p class="text-lg text-charcoal-light mb-12 font-light max-w-5xl">
+                    I use AI not as a content generator, but as a research and analytical accelerator that expands the scope and depth of my work while keeping decision-making firmly human-led.
+                </p>
+                
+                <div class="space-y-16">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch group">
+                        
+                        <div class="order-2 md:order-1 flex flex-col h-full justify-center">
+                            <div class="flex items-center mb-4">
+                                <i data-lucide="layers" class="w-5 h-5 text-burgundy mr-3"></i>
+                                <h4 class="font-serif text-2xl font-bold text-charcoal">NotebookLM</h4>
+                            </div>
+                            <p class="text-[10px] uppercase tracking-widest text-burgundy mb-6 font-bold">Multi-document analysis & cross-comparison</p>
+                            
+                            <div class="bg-charcoal/5 p-5 rounded-sm border-l-2 border-charcoal/20 mb-4">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-charcoal/50 block mb-2">Before</span>
+                                <p class="text-sm text-charcoal-light leading-relaxed">
+                                    Financial research was constrained by the need to manually read and retain large volumes of annual reports, making it difficult to consistently track changes in narratives, assumptions, and cross-company differences over time.
+                                </p>
+                            </div>
+
+                            <div class="bg-white p-5 rounded-sm border-l-2 border-burgundy shadow-sm">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-burgundy block mb-2">Now</span>
+                                <p class="text-sm text-charcoal-light leading-relaxed mb-3">
+                                    I use NotebookLM to conduct structured, multi-document analysis across annual reports, investor presentations, and earnings materials. Instead of reading sequentially, I interrogate documents through targeted analytical questions such as:
+                                </p>
+                                <ul class="text-sm text-charcoal-light leading-relaxed list-disc pl-5 space-y-1.5 mb-3">
+                                    <li>What is driving revenue and margin changes over multiple reporting periods?</li>
+                                    <li>How has management’s tone and strategic priorities evolved over time?</li>
+                                    <li>How do competitors differ in pricing strategy, cost structure, and capital allocation?</li>
+                                    <li>What accounting assumptions or disclosure practices have shifted, and what does that imply?</li>
+                                </ul>
+                                <p class="text-sm text-charcoal-light leading-relaxed font-medium">
+                                    This workflow allows me to quickly surface patterns, inconsistencies, and divergences across companies and time periods. AI handles retrieval and cross-referencing across large text sets; I focus on interpreting implications and forming investment-relevant insights.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="order-1 md:order-2 w-full h-full flex flex-col gap-4 min-h-[400px]">
+                            <div class="relative rounded-md overflow-hidden border border-charcoal/10 shadow-sm bg-white group/item flex-1">
+                                <img src="NotebookLM 2.jpg" alt="Deep Dive Chat" class="absolute inset-0 w-full h-full object-cover object-left-top transition-transform duration-700 group-hover/item:scale-105">
+                                <div class="absolute bottom-3 right-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-sm shadow-md border border-charcoal/5">
+                                    <span class="text-[10px] uppercase tracking-widest font-bold text-burgundy">Deep Dive</span>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4 flex-1">
+                                <div class="relative rounded-md overflow-hidden border border-charcoal/10 shadow-sm bg-white group/item h-full">
+                                    <img src="NotebookLM.jpg" alt="Multiple Sources" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover/item:scale-105">
+                                    <div class="absolute bottom-3 left-3 bg-white/95 backdrop-blur-sm px-2 py-1.5 rounded-sm shadow-md border border-charcoal/5 text-center">
+                                        <span class="text-[9px] uppercase tracking-widest font-bold text-burgundy leading-tight block">Multiple Companies<br>Sources</span>
+                                    </div>
+                                </div>
+
+                                <div class="relative rounded-md overflow-hidden border border-charcoal/10 shadow-sm bg-white group/item h-full">
+                                    <img src="NotebookLM 3.jpg" alt="Quiz Generation" class="absolute inset-0 w-full h-full object-cover object-left-top transition-transform duration-700 group-hover/item:scale-105">
+                                    <div class="absolute bottom-3 right-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-sm shadow-md border border-charcoal/5">
+                                        <span class="text-[10px] uppercase tracking-widest font-bold text-burgundy">Quiz</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch group">
+                        
+                        <div class="order-1 md:order-1 w-full h-full flex flex-col gap-4 min-h-[400px]">
+                            <div class="relative rounded-md overflow-hidden border border-charcoal/10 shadow-sm bg-white group/item flex-1">
+                                <img src="Perplexity.jpg" alt="Perplexity Discovery" class="absolute inset-0 w-full h-full object-cover object-left-top transition-transform duration-700 group-hover/item:scale-105">
+                                <div class="absolute bottom-3 right-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-sm shadow-md border border-charcoal/5">
+                                    <span class="text-[10px] uppercase tracking-widest font-bold text-burgundy">Initial Discovery</span>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4 flex-1">
+                                <div class="relative rounded-md overflow-hidden border border-charcoal/10 shadow-sm bg-white group/item h-full">
+                                    <img src="Google.jpg" alt="Google Verification" class="absolute inset-0 w-full h-full object-cover object-left-top transition-transform duration-700 group-hover/item:scale-105">
+                                    <div class="absolute bottom-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-sm shadow-md border border-charcoal/5">
+                                        <span class="text-[10px] uppercase tracking-widest font-bold text-burgundy block">Source Verification</span>
+                                    </div>
+                                </div>
+
+                                <div class="relative rounded-md overflow-hidden border border-charcoal/10 shadow-sm bg-white group/item h-full">
+                                    <img src="Research Draft.jpg" alt="Synthesized Insights" class="absolute inset-0 w-full h-full object-cover object-left-top transition-transform duration-700 group-hover/item:scale-105">
+                                    <div class="absolute bottom-3 right-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-sm shadow-md border border-charcoal/5">
+                                        <span class="text-[10px] uppercase tracking-widest font-bold text-burgundy">Synthesized Insights</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-2 md:order-2 flex flex-col justify-center h-full">
+                            <div class="flex items-center mb-4">
+                                <i data-lucide="globe" class="w-5 h-5 text-burgundy mr-3"></i>
+                                <h4 class="font-serif text-2xl font-bold text-charcoal">Perplexity + Google</h4>
+                            </div>
+                            <p class="text-[10px] uppercase tracking-widest text-burgundy mb-6 font-bold">Broad discovery followed by source verification</p>
+                            
+                            <div class="bg-charcoal/5 p-5 rounded-sm border-l-2 border-charcoal/20 mb-4">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-charcoal/50 block mb-2">Before</span>
+                                <p class="text-sm text-charcoal-light leading-relaxed">
+                                    Research was primarily keyword-driven, relying on manually searching and filtering through large volumes of articles and reports, which often reflected only the ideas I already knew to look for.
+                                </p>
+                            </div>
+
+                            <div class="bg-white p-5 rounded-sm border-l-2 border-burgundy shadow-sm">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-burgundy block mb-2">Now</span>
+                                <p class="text-sm text-charcoal-light leading-relaxed mb-3">
+                                    I use Perplexity as an initial discovery layer to map the information landscape, surface relevant reports, and identify perspectives or risks I may not have considered. This helps reduce “search bias” inherent in traditional keyword-based research.
+                                </p>
+                                <p class="text-sm text-charcoal-light leading-relaxed font-medium">
+                                    I then shift to Google and primary sources to validate findings by reviewing original filings, reports, and credible industry materials. AI expands breadth; I ensure depth and accuracy through verification and direct source analysis.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch group">
+                        <div class="order-2 md:order-1 flex flex-col h-full justify-center">
+                            <div class="flex items-center mb-4">
+                                <i data-lucide="pen-tool" class="w-5 h-5 text-burgundy mr-3"></i>
+                                <h4 class="font-serif text-2xl font-bold text-charcoal">Claude & Gemini Canvas</h4>
+                            </div>
+                            <p class="text-[10px] uppercase tracking-widest text-burgundy mb-6 font-bold">Structuring and execution of output</p>
+                            
+                            <div class="bg-charcoal/5 p-5 rounded-sm border-l-2 border-charcoal/20 mb-4">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-charcoal/50 block mb-2">Before</span>
+                                <p class="text-sm text-charcoal-light leading-relaxed">
+                                    A significant amount of time in research projects was spent translating already-developed ideas into structured presentations, reports, and slides, which is often repetitive and low marginal value.
+                                </p>
+                            </div>
+
+                            <div class="bg-white p-5 rounded-sm border-l-2 border-burgundy shadow-sm">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-burgundy block mb-2">Now</span>
+                                <p class="text-sm text-charcoal-light leading-relaxed mb-3">
+                                    I use Claude and Gemini Canvas as execution tools to convert structured thinking into professional output. I provide the core logic, arguments, and evidence, and use AI to accelerate formatting, structuring, and drafting of materials such as investment memos or presentations.
+                                </p>
+                                <p class="text-sm text-charcoal-light leading-relaxed font-medium">
+                                    This shifts my focus from manual document production to higher-value work such as refining arguments, stress-testing assumptions, and improving the clarity of insights.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="order-1 md:order-2 w-full h-full flex flex-col gap-4 min-h-[400px]">
+                            <div class="relative rounded-md overflow-hidden border border-charcoal/10 shadow-sm bg-white group/item flex-1">
+                                <img src="PPT Presentation.jpg" alt="Slide Creation Output" class="absolute inset-0 w-full h-full object-cover object-left-top transition-transform duration-700 group-hover/item:scale-105">
+                                <div class="absolute bottom-3 right-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-sm shadow-md border border-charcoal/5">
+                                    <span class="text-[10px] uppercase tracking-widest font-bold text-burgundy">Slide Creation</span>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4 flex-1">
+                                <div class="relative rounded-md overflow-hidden border border-charcoal/10 shadow-sm bg-white group/item h-full">
+                                    <img src="Python Financial Analysis.jpg" alt="Data and Scripting Output" class="absolute inset-0 w-full h-full object-cover object-left-top transition-transform duration-700 group-hover/item:scale-105">
+                                    <div class="absolute bottom-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-sm shadow-md border border-charcoal/5">
+                                        <span class="text-[10px] uppercase tracking-widest font-bold text-burgundy block">Data & Scripting</span>
+                                    </div>
+                                </div>
+
+                                <div class="relative rounded-md overflow-hidden border border-charcoal/10 shadow-sm bg-white group/item h-full">
+                                    <img src="Proposal Drafting.jpg" alt="Value Propositions" class="absolute inset-0 w-full h-full object-cover object-left-top transition-transform duration-700 group-hover/item:scale-105">
+                                    <div class="absolute bottom-3 right-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-sm shadow-md border border-charcoal/5">
+                                        <span class="text-[10px] uppercase tracking-widest font-bold text-burgundy">Value Propositions</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-charcoal text-parchment p-8 md:p-10 rounded-sm shadow-md mt-10 max-w-6xl mx-auto">
+                        <h4 class="font-serif text-2xl font-bold mb-6 text-white border-b border-burgundy pb-4">Overall Approach</h4>
+                        <p class="text-sm md:text-base font-light text-parchment-dark leading-relaxed mb-6">
+                            Across all tools, my workflow is built on a consistent principle:
+                        </p>
+                        <ul class="text-sm md:text-base font-light text-parchment-dark leading-relaxed space-y-4">
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-burgundy-light mr-3 shrink-0 mt-0.5"></i>
+                                <span><strong>AI is used to expand information processing capacity, not to replace analytical judgment.</strong></span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-burgundy-light mr-3 shrink-0 mt-0.5"></i>
+                                <span>It accelerates information retrieval, synthesis, and structuring, while I remain responsible for hypothesis formation, validation against primary sources, and final interpretation.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-burgundy-light mr-3 shrink-0 mt-0.5"></i>
+                                <span>The outcome is not faster output alone, but a broader and more systematic research process that allows me to identify insights that are difficult to surface through traditional manual workflows.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <div id="experience" class="page-section">
+            <section class="py-12 reveal">
+                <h3 class="font-serif text-3xl font-bold mb-10 text-charcoal">Institutional Ledger</h3>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+                    <div>
+                        <h4 class="font-serif text-xl text-burgundy mb-6 border-b border-burgundy/20 pb-2 flex items-center">
+                            <i data-lucide="landmark" class="w-5 h-5 mr-2"></i> Experience
+                        </h4>
+                        <div class="space-y-10">
+                            
+                            <div>
+                                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
+                                    <h5 class="font-bold text-charcoal">CFA Futures Mentorship Program</h5>
+                                    <span class="text-xs font-mono text-charcoal-light mt-1 sm:mt-0">Mar 2026 - Jun 2026</span>
+                                </div>
+                                <p class="text-[11px] uppercase tracking-widest text-burgundy mb-2 font-semibold">Mentee (Renewable Energy Research)</p>
+                                <p class="text-sm text-charcoal-light leading-relaxed mb-4">
+                                    Mentored by a Vice President from an international investment bank. Focused on deep-dive research into renewable energy infrastructure, producing comprehensive deliverables on ecosystem mapping, deal farm-downs, and commercial structuring.
+                                </p>
+                                
+                                <div class="p-5 bg-white/50 border border-burgundy/10 rounded-sm shadow-sm group hover:border-burgundy/40 transition-colors mb-4 relative overflow-hidden">
+                                    <i data-lucide="snowflake" class="absolute -right-4 -bottom-4 w-32 h-32 text-burgundy/[0.03] pointer-events-none group-hover:scale-110 transition-transform duration-700"></i>
+                                    
+                                    <div class="relative z-10">
+                                        <div class="flex justify-between items-start mb-4 border-b border-burgundy/10 pb-3">
+                                            <div>
+                                                <p class="text-sm font-bold text-charcoal flex items-center">
+                                                    <i data-lucide="snowflake" class="w-4 h-4 text-burgundy mr-2"></i> Cooling-as-a-Service (CaaS)
+                                                </p>
+                                                <p class="text-[10px] uppercase tracking-widest text-burgundy font-semibold mt-1">Sector Intelligence & Deal Structuring</p>
+                                            </div>
+                                            <a href="Cooling as a Service Malaysia Prelim Research.pdf" target="_blank" rel="noopener noreferrer" class="text-[10px] uppercase tracking-widest font-semibold text-burgundy border border-burgundy/20 px-3 py-1.5 hover:bg-burgundy hover:text-white transition-colors flex items-center rounded-sm shrink-0 bg-white shadow-sm">
+                                                <i data-lucide="presentation" class="w-3 h-3 mr-1.5"></i> View Deck
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div>
+                                                <h6 class="text-[10px] font-bold text-charcoal uppercase tracking-widest mb-2">Commercial Drivers & Pricing</h6>
+                                                <ul class="text-[11px] text-charcoal-light leading-relaxed space-y-1.5 list-none">
+                                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mr-1.5 shrink-0 mt-0.5"></i> <strong>Zero CAPEX:</strong> Eliminates balance sheet burden for non-core infrastructure.</li>
+                                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mr-1.5 shrink-0 mt-0.5"></i> <strong>Precision Cooling:</strong> Bridges the technical gap for Data Centers (RM/kW IT Load).</li>
+                                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mr-1.5 shrink-0 mt-0.5"></i> <strong>Revenue Models:</strong> RM/RTh variable fees vs. fixed capacity reservation floors.</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h6 class="text-[10px] font-bold text-charcoal uppercase tracking-widest mb-2">Market Landscape & Case Studies</h6>
+                                                <ul class="text-[11px] text-charcoal-light leading-relaxed space-y-1.5 list-none">
+                                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mr-1.5 shrink-0 mt-0.5"></i> <strong>Kaer:</strong> Exchange TRX (On-Site, RM 150M, 15 yrs)</li>
+                                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mr-1.5 shrink-0 mt-0.5"></i> <strong>KJTS Group:</strong> KIPMall (On-Site, RM 23M, 20 yrs)</li>
+                                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mr-1.5 shrink-0 mt-0.5"></i> <strong>TNEC:</strong> KLIA (District Cooling DCS, RM 183M, 20 yrs)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-5 bg-white/50 border border-burgundy/10 rounded-sm shadow-sm group hover:border-burgundy/40 transition-colors mb-4 relative overflow-hidden">
+                                    <i data-lucide="sun" class="absolute -right-4 -bottom-4 w-32 h-32 text-burgundy/[0.03] pointer-events-none group-hover:scale-110 transition-transform duration-700"></i>
+                                    
+                                    <div class="relative z-10">
+                                        <div class="flex justify-between items-start mb-4 border-b border-burgundy/10 pb-3">
+                                            <div>
+                                                <p class="text-sm font-bold text-charcoal flex items-center">
+                                                    <i data-lucide="sun" class="w-4 h-4 text-burgundy mr-2"></i> Renewable Energy Market Research
+                                                </p>
+                                                <p class="text-[10px] uppercase tracking-widest text-burgundy font-semibold mt-1">Sector Intelligence & Capital Allocation</p>
+                                            </div>
+                                            <a href="Renewable Energy Market Research.pdf" target="_blank" rel="noopener noreferrer" class="text-[10px] uppercase tracking-widest font-semibold text-burgundy border border-burgundy/20 px-3 py-1.5 hover:bg-burgundy hover:text-white transition-colors flex items-center rounded-sm shrink-0 bg-white shadow-sm">
+                                                <i data-lucide="presentation" class="w-3 h-3 mr-1.5"></i> View Report
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div>
+                                                <h6 class="text-[10px] font-bold text-charcoal uppercase tracking-widest mb-2">Macro Themes & Regional Pipelines</h6>
+                                                <ul class="text-[11px] text-charcoal-light leading-relaxed space-y-1.5 list-none">
+                                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mr-1.5 shrink-0 mt-0.5"></i> <strong>ASEAN Power Grid:</strong> Cross-border grid interconnectivity economics and transmission playbooks.</li>
+                                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mr-1.5 shrink-0 mt-0.5"></i> <strong>CGPP & LSS Quotas:</strong> Tariff architecture and allocation dynamics of merchant green solar assets.</li>
+                                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mr-1.5 shrink-0 mt-0.5"></i> <strong>JS-SEZ Energy Strategy:</strong> Localized energy infrastructure moats inside the Southern special zone.</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h6 class="text-[10px] font-bold text-charcoal uppercase tracking-widest mb-2">Capital Dynamics & Corporate Moats</h6>
+                                                <ul class="text-[11px] text-charcoal-light leading-relaxed space-y-1.5 list-none">
+                                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mr-1.5 shrink-0 mt-0.5"></i> <strong>Infrastructure Movers:</strong> Tracking asset recycling, grid expenditure, and farm-downs for TNB, Solarvest, and Gentari.</li>
+                                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mr-1.5 shrink-0 mt-0.5"></i> <strong>Cypark Case Study:</strong> Tactical structural assessment of major utility consolidation deals.</li>
+                                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mr-1.5 shrink-0 mt-0.5"></i> <strong>BESS Architecture:</strong> Financial viability and pipeline economics of utility-scale storage projects.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="Cooling as a Service Malaysia Prelim Research.pdf" target="_blank" rel="noopener noreferrer" class="text-[10px] uppercase tracking-widest font-semibold text-burgundy border border-burgundy/20 px-2 py-1 hover:bg-burgundy hover:text-white transition-colors flex items-center rounded-sm">
+                                        <i data-lucide="monitor-play" class="w-3 h-3 mr-1"></i> CaaS Deck
+                                    </a>
+                                    <a href="Cypark Deal Factsheet.pdf" target="_blank" rel="noopener noreferrer" class="text-[10px] uppercase tracking-widest font-semibold text-burgundy border border-burgundy/20 px-2 py-1 hover:bg-burgundy hover:text-white transition-colors flex items-center rounded-sm">
+                                        <i data-lucide="file-text" class="w-3 h-3 mr-1"></i> Cypark Factsheet
+                                    </a>
+                                    <a href="Renewable Energy Market Research.pdf" target="_blank" rel="noopener noreferrer" class="text-[10px] uppercase tracking-widest font-semibold text-burgundy border border-burgundy/20 px-2 py-1 hover:bg-burgundy hover:text-white transition-colors flex items-center rounded-sm">
+                                        <i data-lucide="file-text" class="w-3 h-3 mr-1"></i> RE Market Report
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
+                                    <h5 class="font-bold text-charcoal">Sunway University</h5>
+                                    <span class="text-xs font-mono text-charcoal-light mt-1 sm:mt-0">Ongoing</span>
+                                </div>
+                                <p class="text-[11px] uppercase tracking-widest text-burgundy mb-2 font-semibold">Programme Initiator (V.A.S.T. Amplifier)</p>
+                                <p class="text-sm text-charcoal-light leading-relaxed mb-4">
+                                    Partnering with Programme Architect Penny Leong to close the graduate transition gap. We are applying academic self-leadership research to structure the <strong>Total Enrichment Advisory (T.E.A.)</strong>, shifting students from aimless complexity to actionable value expression.
+                                </p>
+                                
+                                <div class="p-5 bg-white/50 border border-burgundy/10 rounded-sm shadow-sm group hover:border-burgundy/40 transition-colors mb-4 relative overflow-hidden">
+                                    <i data-lucide="compass" class="absolute -right-4 -bottom-4 w-32 h-32 text-burgundy/[0.03] pointer-events-none group-hover:scale-110 transition-transform duration-700"></i>
+                                    
+                                    <div class="relative z-10">
+                                        <div class="flex justify-between items-start mb-4 border-b border-burgundy/10 pb-3">
+                                            <div>
+                                                <p class="text-sm font-bold text-charcoal flex items-center">
+                                                    <i data-lucide="compass" class="w-4 h-4 text-burgundy mr-2"></i> The V.A.S.T. Amplifier Project
+                                                </p>
+                                                <p class="text-[10px] uppercase tracking-widest text-burgundy font-semibold mt-1">Total Enrichment Advisory (T.E.A.)</p>
+                                            </div>
+                                            <a href="V.A.S.T. Graduate Enrichment Programme.pdf" target="_blank" rel="noopener noreferrer" class="text-[10px] uppercase tracking-widest font-semibold text-burgundy border border-burgundy/20 px-3 py-1.5 hover:bg-burgundy hover:text-white transition-colors flex items-center rounded-sm shrink-0 bg-white shadow-sm">
+                                                <i data-lucide="presentation" class="w-3 h-3 mr-1.5"></i> View Deck
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div>
+                                                <h6 class="text-[10px] font-bold text-charcoal uppercase tracking-widest mb-2">The Core Reframe</h6>
+                                                <ul class="text-[11px] text-charcoal-light leading-relaxed space-y-1.5 list-none">
+                                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mr-1.5 shrink-0 mt-0.5"></i> <strong>The Missing Compass:</strong> Bridges the gap between graduate exposure and actual execution.</li>
+                                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mr-1.5 shrink-0 mt-0.5"></i> <strong>Self-Leadership Focus:</strong> Shifts focus from simply acquiring access to actively building an internal compass.</li>
+                                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mr-1.5 shrink-0 mt-0.5"></i> <strong>Tangible Value:</strong> Teaches students to move with conviction and demonstrate value before landing a role.</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h6 class="text-[10px] font-bold text-charcoal uppercase tracking-widest mb-2">3-Day Program Architecture</h6>
+                                                <ul class="text-[11px] text-charcoal-light leading-relaxed space-y-1.5 list-none">
+                                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mr-1.5 shrink-0 mt-0.5"></i> <strong>Day 1 (Direction):</strong> Mapping strengths using the R.E.A.L. framework to produce a Competency Blueprint.</li>
+                                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mr-1.5 shrink-0 mt-0.5"></i> <strong>Day 2 (Expression):</strong> Reframing communication anxiety into a recorded 60-second Personal Value Pitch.</li>
+                                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mr-1.5 shrink-0 mt-0.5"></i> <strong>Day 3 (AI Execution):</strong> Conducting AI-augmented target company research to build a strategic value proposal.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="V.A.S.T. Graduate Enrichment Programme.pdf" target="_blank" rel="noopener noreferrer" class="text-[10px] uppercase tracking-widest font-semibold text-burgundy border border-burgundy/20 px-2 py-1 hover:bg-burgundy hover:text-white transition-colors flex items-center rounded-sm">
+                                        <i data-lucide="presentation" class="w-3 h-3 mr-1"></i> Pitch Deck
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
+                                    <h5 class="font-bold text-charcoal">AHAM Asset Management</h5>
+                                    <span class="text-xs font-mono text-charcoal-light mt-1 sm:mt-0">Jan 2026 - Apr 2026</span>
+                                </div>
+                                <p class="text-[11px] uppercase tracking-widest text-burgundy mb-2 font-semibold">Intern</p>
+                                <p class="text-sm text-charcoal-light leading-relaxed">
+                                    Executed 9-week financial reconciliation and systematically automated performance data tracking across hundreds of channels.
+                                </p>
+                            </div>
+
+                            <div>
+                                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-1">
+                                    <h5 class="font-bold text-charcoal">Selangor State Exco</h5>
+                                    <span class="text-xs font-mono text-charcoal-light mt-1 sm:mt-0">Jan 2025 - Mar 2025</span>
+                                </div>
+                                <p class="text-[11px] uppercase tracking-widest text-burgundy mb-2 font-semibold">Political Intern</p>
+                                <p class="text-sm text-charcoal-light leading-relaxed">
+                                    Investment, Trade & Mobility division. Drafted public speeches and bridged government-private sector dynamics through stakeholder meetings.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-serif text-xl text-burgundy mb-6 border-b border-burgundy/20 pb-2 flex items-center">
+                            <i data-lucide="graduation-cap" class="w-5 h-5 mr-2"></i> Education
+                        </h4>
+                        <div class="space-y-8">
+                            <div>
+                                <h5 class="font-bold text-charcoal mb-1">Sunway University</h5>
+                                <p class="text-[11px] uppercase tracking-widest text-burgundy mb-2 font-semibold">BSc (Hons) in Financial Analysis</p>
+                                <ul class="text-sm text-charcoal-light leading-relaxed space-y-1 list-none">
+                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mt-1 mr-2"></i> CGPA: 3.94 / 4.0</li>
+                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mt-1 mr-2"></i> Book Prize Winner (Financial Statement Analysis)</li>
+                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mt-1 mr-2"></i> Sunway Ace Scholarship</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h5 class="font-bold text-charcoal mb-1">Sunway College</h5>
+                                <p class="text-[11px] uppercase tracking-widest text-burgundy mb-2 font-semibold">Australian Matriculation (AUSMAT)</p>
+                                <ul class="text-sm text-charcoal-light leading-relaxed space-y-1 list-none">
+                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mt-1 mr-2"></i> ATAR: 97.25</li>
+                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mt-1 mr-2"></i> Best Subject Award in Economics</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h5 class="font-bold text-charcoal mb-1">Catholic High School, PJ</h5>
+                                <p class="text-[11px] uppercase tracking-widest text-burgundy mb-2 font-semibold">Sijil Pelajaran Malaysia (SPM)</p>
+                                <ul class="text-sm text-charcoal-light leading-relaxed space-y-1 list-none">
+                                    <li class="flex items-start"><i data-lucide="check" class="w-3 h-3 text-burgundy mt-1 mr-2"></i> 10 A+</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-serif text-xl text-burgundy mb-6 border-b border-burgundy/20 pb-2 flex items-center">
+                        <i data-lucide="award" class="w-5 h-5 mr-2"></i> Certifications & Awards
+                    </h4>
+                    
+                    <div class="space-y-6 max-w-6xl">
+                        <div class="p-8 border border-burgundy/10 bg-white/50 hover:bg-white transition-colors duration-300 hover:border-burgundy/40 group flex flex-col lg:flex-row gap-8">
+                            <div class="lg:w-1/2 flex flex-col justify-center">
+                                <h5 class="font-bold text-charcoal mb-1">2024 Budding Value Investor Award (BVIA)</h5>
+                                <p class="text-[11px] uppercase tracking-widest text-burgundy mb-4 font-semibold">Grand Prize Winner</p>
+                                <p class="text-sm text-charcoal-light leading-relaxed">
+                                    Awarded the Grand Prize in a rigorous equity research competition. Conducted deep-dive fundamental analysis and developed a comprehensive value-driven investment thesis to secure the top position among participating universities.
+                                </p>
+                            </div>
+                            <div class="lg:w-1/2 grid grid-cols-2 gap-3">
+                                <div class="overflow-hidden border border-burgundy/15 rounded-sm aspect-video bg-[#E8E6DF] relative shadow-sm">
+                                    <img src="BVIA.jpg" alt="BVIA Competition Presentation" class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105">
+                                </div>
+                                <div class="overflow-hidden border border-burgundy/15 rounded-sm aspect-video bg-[#E8E6DF] relative shadow-sm">
+                                    <img src="BVIA 2.jpg" alt="BVIA Award Ceremony" class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-8 border border-burgundy/10 bg-white/50 hover:bg-white transition-colors duration-300 hover:border-burgundy/40 group flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+                            <div>
+                                <h5 class="font-bold text-charcoal mb-1 flex items-center">
+                                    Chartered Financial Analyst (CFA) <i data-lucide="badge-check" class="w-4 h-4 text-burgundy ml-2"></i>
+                                </h5>
+                                <p class="text-[11px] uppercase tracking-widest text-burgundy mb-2 font-semibold">Level 1 Passed</p>
+                                <p class="text-sm text-charcoal-light leading-relaxed max-w-4xl">
+                                    Successfully cleared the rigorous CFA Level 1 examination, establishing a strong foundation in quantitative methods, economics, financial statement analysis, and portfolio management.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="p-8 border border-burgundy/10 bg-white/50 hover:bg-white transition-colors duration-300 hover:border-burgundy/40 group flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+                            <div>
+                                <h5 class="font-bold text-charcoal mb-1 flex items-center">
+                                    INSEAD & Prudential NextGen Academy <i data-lucide="building" class="w-4 h-4 text-burgundy ml-2"></i>
+                                </h5>
+                                <p class="text-[11px] uppercase tracking-widest text-burgundy mb-2 font-semibold">Upcoming: 3-Day Executive Education</p>
+                                <p class="text-sm text-charcoal-light leading-relaxed max-w-4xl">
+                                    Selected to participate in an intensive, collaborative program hosted by INSEAD and Prudential, focusing on strategic leadership, wealth transition, and enterprise growth frameworks.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="reading" class="page-section">
+            <section class="py-12 reveal">
+                <h3 class="font-serif text-3xl font-bold mb-4 text-charcoal">The Reading Ledger</h3>
+                <p class="text-charcoal-light mb-12 font-light border-b border-burgundy/20 pb-8">Mental models, value investing philosophies, and fundamental principles currently shaping my perspective.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    
+                    <div class="flex items-center p-6 md:p-8 bg-white border border-charcoal/10 rounded-xl relative group hover:border-burgundy/30 hover:shadow-xl transition-all shadow-sm min-h-[240px]">
+                        <div class="absolute top-5 right-5 text-charcoal/20 group-hover:text-burgundy transition-colors">
+                            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                        </div>
+                        <div class="w-24 lg:w-28 shrink-0 aspect-[2/3] overflow-hidden border border-charcoal/10 shadow-md mr-5 bg-parchment rounded-sm group-hover:shadow-lg transition-shadow">
+                            <img src="https://covers.openlibrary.org/b/isbn/9781501135910-L.jpg" alt="Shoe Dog" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="flex flex-col h-full justify-center">
+                            <div>
+                                <span class="bg-green-100 text-green-800 text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-md uppercase inline-block mb-4">Read</span>
+                                <h5 class="font-serif font-bold text-lg text-charcoal leading-tight mb-2 pr-6">Shoe Dog</h5>
+                                <p class="text-sm text-charcoal-light font-light">Phil Knight</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center p-6 md:p-8 bg-white border border-charcoal/10 rounded-xl relative group hover:border-burgundy/30 hover:shadow-xl transition-all shadow-sm min-h-[240px]">
+                        <div class="absolute top-5 right-5 text-charcoal/20 group-hover:text-burgundy transition-colors">
+                            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                        </div>
+                        <div class="w-24 lg:w-28 shrink-0 aspect-[2/3] overflow-hidden border border-charcoal/10 shadow-md mr-5 bg-parchment rounded-sm group-hover:shadow-lg transition-shadow">
+                            <img src="https://covers.openlibrary.org/b/isbn/9781621291657-L.jpg" alt="100 Baggers" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="flex flex-col h-full justify-center">
+                            <div>
+                                <span class="bg-green-100 text-green-800 text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-md uppercase inline-block mb-4">Read</span>
+                                <h5 class="font-serif font-bold text-lg text-charcoal leading-tight mb-2 pr-6">100 Baggers</h5>
+                                <p class="text-sm text-charcoal-light font-light">Christopher Mayer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center p-6 md:p-8 bg-white border border-charcoal/10 rounded-xl relative group hover:border-burgundy/30 hover:shadow-xl transition-all shadow-sm min-h-[240px]">
+                        <div class="absolute top-5 right-5 text-charcoal/20 group-hover:text-burgundy transition-colors">
+                            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                        </div>
+                        <div class="w-24 lg:w-28 shrink-0 aspect-[2/3] overflow-hidden border border-charcoal/10 shadow-md mr-5 bg-parchment rounded-sm group-hover:shadow-lg transition-shadow">
+                            <img src="https://covers.openlibrary.org/b/isbn/9781982137274-L.jpg" alt="7 Habits of Highly Effective People" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="flex flex-col h-full justify-center">
+                            <div>
+                                <span class="bg-green-100 text-green-800 text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-md uppercase inline-block mb-4">Read</span>
+                                <h5 class="font-serif font-bold text-lg text-charcoal leading-tight mb-2 pr-6">7 Habits of Highly Effective People</h5>
+                                <p class="text-sm text-charcoal-light font-light">Stephen R. Covey</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center p-6 md:p-8 bg-white border border-charcoal/10 rounded-xl relative group hover:border-burgundy/30 hover:shadow-xl transition-all shadow-sm min-h-[240px]">
+                        <div class="absolute top-5 right-5 text-charcoal/20 group-hover:text-burgundy transition-colors">
+                            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                        </div>
+                        <div class="w-24 lg:w-28 shrink-0 aspect-[2/3] overflow-hidden border border-charcoal/10 shadow-md mr-5 bg-parchment rounded-sm group-hover:shadow-lg transition-shadow">
+                            <img src="https://covers.openlibrary.org/b/isbn/9781119803270-L.jpg" alt="The Essays of Warren Buffett, 6E" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="flex flex-col h-full justify-center">
+                            <div>
+                                <span class="bg-green-100 text-green-800 text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-md uppercase inline-block mb-4">Read</span>
+                                <h5 class="font-serif font-bold text-lg text-charcoal leading-tight mb-2 pr-6">The Essays of Warren Buffett (6E)</h5>
+                                <p class="text-sm text-charcoal-light font-light">L. Cunningham</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center p-6 md:p-8 bg-white border border-charcoal/10 rounded-xl relative group hover:border-burgundy/30 hover:shadow-xl transition-all shadow-sm min-h-[240px]">
+                        <div class="absolute top-5 right-5 text-charcoal/20 group-hover:text-burgundy transition-colors">
+                            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                        </div>
+                        <div class="w-24 lg:w-28 shrink-0 aspect-[2/3] overflow-hidden border border-charcoal/10 shadow-md mr-5 bg-parchment rounded-sm group-hover:shadow-lg transition-shadow">
+                            <img src="https://covers.openlibrary.org/b/isbn/9780671027032-L.jpg" alt="How to Win Friends and Influence People" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="flex flex-col h-full justify-center">
+                            <div>
+                                <span class="bg-green-100 text-green-800 text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-md uppercase inline-block mb-4">Read</span>
+                                <h5 class="font-serif font-bold text-lg text-charcoal leading-tight mb-2 pr-6">How to Win Friends & Influence People</h5>
+                                <p class="text-sm text-charcoal-light font-light">Dale Carnegie</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center p-6 md:p-8 bg-white border border-charcoal/10 rounded-xl relative group hover:border-burgundy/30 hover:shadow-xl transition-all shadow-sm min-h-[240px]">
+                        <a href="https://shopee.com.my/product/131422844/42614966411?gads_t_sig=gqRjZGVrxHCFomtpsTE0MjUxOnRzc19zZGtfa2V5omt20QABpGFsZ2_SAAAAZKNkZWvAomN0xEAAAAAMfaLqlfFS4JwQPCoOJZHE2YMfq1tWF61pnIIHqGuyOlpkjBotHu7Xpb0YRK1tULWVZdcpI_r9hw6jgE9CqmNpcGhlcnRleHTEcgAAAAzvqamSw531lkD-FZEyakhywd043gqN13VZryq1tcftmJQjVDOUkUtX4hxke9jyZ767Dlp1bK6AbBpKiAG73JeOUs0_CMvy5P4gq2qj0cT0xoucLf2pt9bI--DZbl7ZG4jYKGk4qz4VT5qnm_EVxQ&gad_source=1&gad_campaignid=23298095039&gbraid=0AAAAADPpYTL6Xnj54dmj_jpqXjlbCsdwF&gclid=Cj0KCQjwornRBhCrARIsAON5exG6tCS-0IzcBdQZbekEK5KWOfX7KR9FBJBXXKQ8J7kulfWbsQy1HTYaAvvdEALw_wcB" target="_blank" rel="noopener noreferrer" class="absolute top-5 right-5 text-charcoal/20 group-hover:text-burgundy transition-colors z-10">
+                            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                        </a>
+                        <div class="w-24 lg:w-28 shrink-0 aspect-[2/3] overflow-hidden border border-charcoal/10 shadow-md mr-5 bg-parchment rounded-sm group-hover:shadow-lg transition-shadow">
+                            <img src="易经.jpg" alt="易經白話講座" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="flex flex-col h-full justify-center">
+                            <div>
+                                <span class="bg-amber-100 text-amber-800 text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-md uppercase inline-block mb-4">Reading</span>
+                                <h5 class="font-serif font-bold text-lg text-charcoal leading-tight mb-2 pr-6">易經白話講座：64卦</h5>
+                                <p class="text-sm text-charcoal-light font-light">王思迅 (Wang Sixun)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center p-6 md:p-8 bg-white border border-charcoal/10 rounded-xl relative group hover:border-burgundy/30 hover:shadow-xl transition-all shadow-sm min-h-[240px]">
+                        <div class="absolute top-5 right-5 text-charcoal/20 group-hover:text-burgundy transition-colors">
+                            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                        </div>
+                        <div class="w-24 lg:w-28 shrink-0 aspect-[2/3] overflow-hidden border border-charcoal/10 shadow-md mr-5 bg-parchment rounded-sm group-hover:shadow-lg transition-shadow">
+                            <img src="https://covers.openlibrary.org/b/isbn/9780061241895-L.jpg" alt="Influence" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="flex flex-col h-full justify-center">
+                            <div>
+                                <span class="bg-amber-100 text-amber-800 text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-md uppercase inline-block mb-4">Reading</span>
+                                <h5 class="font-serif font-bold text-lg text-charcoal leading-tight mb-2 pr-6">Influence</h5>
+                                <p class="text-sm text-charcoal-light font-light">Robert Cialdini</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center p-6 md:p-8 bg-white border border-charcoal/10 rounded-xl relative group hover:border-burgundy/30 hover:shadow-xl transition-all shadow-sm min-h-[240px]">
+                        <div class="absolute top-5 right-5 text-charcoal/20 group-hover:text-burgundy transition-colors">
+                            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                        </div>
+                        <div class="w-24 lg:w-28 shrink-0 aspect-[2/3] overflow-hidden border border-charcoal/10 shadow-md mr-5 bg-parchment rounded-sm group-hover:shadow-lg transition-shadow">
+                            <img src="https://covers.openlibrary.org/b/isbn/9781578645015-L.jpg" alt="Poor Charlie's Almanack" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="flex flex-col h-full justify-center">
+                            <div>
+                                <span class="bg-slate-100 text-slate-700 text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-md uppercase inline-block mb-4">To Read</span>
+                                <h5 class="font-serif font-bold text-lg text-charcoal leading-tight mb-2 pr-6">Poor Charlie's Almanack</h5>
+                                <p class="text-sm text-charcoal-light font-light">Charlie Munger</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+        
+        <div id="services" class="page-section">
+            <section class="py-12 reveal">
+                <div class="mb-16">
+                    <h3 class="font-serif text-3xl font-bold mb-4 text-charcoal">Research & Advisory Services</h3>
+                    <p class="text-lg text-charcoal-light font-light max-w-5xl leading-relaxed">
+                        As an independent analyst, my strength lies in connecting the dots amidst the noise. I structure complex market variables into actionable, institutional-grade insights tailored to the Malaysian ecosystem—spanning renewable energy, SME digital transformation, and macro-policy shifts.
+                    </p>
+                </div>
+
+                <div class="flex flex-col gap-10 mb-8">
+                    
+                    <div class="bg-white border border-burgundy/20 rounded-sm shadow-sm hover:shadow-md transition-shadow duration-300 p-8 md:p-10 flex flex-col lg:flex-row gap-8 items-start">
+                        <div class="lg:w-1/3 w-full border-b lg:border-b-0 lg:border-r border-charcoal/10 pb-6 lg:pb-0 lg:pr-8 shrink-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center mb-4">
+                                    <i data-lucide="zap" class="w-6 h-6 text-burgundy mr-3"></i>
+                                    <h4 class="font-serif text-2xl font-bold text-charcoal">Tier I</h4>
+                                </div>
+                                <p class="text-[11px] uppercase tracking-widest text-burgundy font-bold mb-4">Preliminary Intelligence</p>
+                                <p class="text-sm text-charcoal-light leading-relaxed italic border-l-2 border-burgundy pl-3 mb-6">
+                                    "Clean, evidence-based answers to ‘Should we invest our time and capital into this or not?’ before committing significant resources."
+                                </p>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <div class="bg-parchment rounded-sm px-3 py-2 border border-charcoal/5 flex items-center justify-between">
+                                    <span class="text-[10px] uppercase tracking-widest font-bold text-charcoal/60">Timeline</span>
+                                    <span class="text-xs font-medium text-charcoal">3–7 Working Days</span>
+                                </div>
+                                <div class="bg-parchment rounded-sm px-3 py-2 border border-charcoal/5 flex items-center justify-between">
+                                    <span class="text-[10px] uppercase tracking-widest font-bold text-charcoal/60">Format</span>
+                                    <span class="text-xs font-medium text-charcoal">5–10 Pages (No Fluff)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:w-2/3 w-full flex flex-col h-full justify-between">
+                            <p class="text-sm text-charcoal leading-relaxed mb-8 font-medium">
+                                A rapid-turn market pulse built for local founders, scaling SMEs, family offices, and foreign investors who need to map a localized opportunity in Malaysia without the corporate bloat.
+                            </p>
+
+                            <h5 class="text-xs font-bold text-charcoal mb-4 uppercase tracking-widest border-b border-charcoal/10 pb-2">4 Core Questions We Answer</h5>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                                <div>
+                                    <h6 class="text-sm font-bold text-burgundy mb-1 flex items-center"><i data-lucide="target" class="w-4 h-4 mr-2"></i> Is the local demand real?</h6>
+                                    <p class="text-xs text-charcoal-light leading-relaxed">A sharp look at current market sizing, growth drivers, and whether Malaysian buyers are actually looking for a solution.</p>
+                                </div>
+                                <div>
+                                    <h6 class="text-sm font-bold text-burgundy mb-1 flex items-center"><i data-lucide="map" class="w-4 h-4 mr-2"></i> Who owns the ground right now?</h6>
+                                    <p class="text-xs text-charcoal-light leading-relaxed">Identifying the dominant local or regional players, how they are positioned, and exactly where they are leaving money on the table.</p>
+                                </div>
+                                <div>
+                                    <h6 class="text-sm font-bold text-burgundy mb-1 flex items-center"><i data-lucide="alert-triangle" class="w-4 h-4 mr-2"></i> What are the immediate speedbumps?</h6>
+                                    <p class="text-xs text-charcoal-light leading-relaxed">Uncovering immediate regulatory red tape (MIDA/MITI updates, licensing), supply chain bottlenecks, or localized market frictions.</p>
+                                </div>
+                                <div>
+                                    <h6 class="text-sm font-bold text-burgundy mb-1 flex items-center"><i data-lucide="arrow-right-circle" class="w-4 h-4 mr-2"></i> What is the next logical move?</h6>
+                                    <p class="text-xs text-charcoal-light leading-relaxed">A direct strategic recommendation on whether to kill the idea, pivot, or proceed to deep-dive commercial due diligence.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-charcoal/5 p-5 rounded-sm border-l-2 border-burgundy mt-auto">
+                                <p class="text-[10px] font-bold text-charcoal mb-3 uppercase tracking-widest">The 3 Simple Deliverables</p>
+                                <p class="text-xs text-charcoal-light mb-4 italic">Instead of a twenty-point checklist, you get three highly operational outputs:</p>
+                                <ul class="text-sm text-charcoal-light space-y-3 list-none pl-1">
+                                    <li class="flex items-start">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-burgundy mr-2 shrink-0 mt-0.5"></i>
+                                        <span><strong class="text-charcoal">The Market Pulse:</strong> A high-level reality check of the industry size, active value chains, and immediate macro trends within Malaysia.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-burgundy mr-2 shrink-0 mt-0.5"></i>
+                                        <span><strong class="text-charcoal">The Competitor Map:</strong> A clear grid showing who your primary local threats are, what makes them successful, and the gaps they've ignored.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-burgundy mr-2 shrink-0 mt-0.5"></i>
+                                        <span><strong class="text-charcoal">The Strategic Flag Report:</strong> A blunt summary of key opportunities, critical risks, and explicit "blind spots" you must resolve before making a final decision.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-burgundy/20 rounded-sm shadow-sm hover:shadow-md transition-shadow duration-300 p-8 md:p-10 flex flex-col lg:flex-row gap-8 items-start">
+                        <div class="lg:w-1/3 w-full border-b lg:border-b-0 lg:border-r border-charcoal/10 pb-6 lg:pb-0 lg:pr-8 shrink-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center mb-4">
+                                    <i data-lucide="search" class="w-6 h-6 text-burgundy mr-3"></i>
+                                    <h4 class="font-serif text-2xl font-bold text-charcoal">Tier II</h4>
+                                </div>
+                                <p class="text-[11px] uppercase tracking-widest text-burgundy font-bold mb-4">Strategic Decision Dossier</p>
+                                <p class="text-sm text-charcoal-light leading-relaxed italic border-l-2 border-burgundy pl-3 mb-6">
+                                    "A comprehensive, board-ready commercial playbook designed for high-stakes execution—whether deploying capital, entering a new market, launching a product, or evaluating an acquisition."
+                                </p>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <div class="bg-parchment rounded-sm px-3 py-2 border border-charcoal/5 flex items-center justify-between">
+                                    <span class="text-[10px] uppercase tracking-widest font-bold text-charcoal/60">Timeline</span>
+                                    <span class="text-xs font-medium text-charcoal">2–6 Weeks</span>
+                                </div>
+                                <div class="bg-parchment rounded-sm px-3 py-2 border border-charcoal/5 flex items-center justify-between">
+                                    <span class="text-[10px] uppercase tracking-widest font-bold text-charcoal/60">Output</span>
+                                    <span class="text-xs font-medium text-charcoal text-right w-2/3">Commercial Dossier + Board Deck</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:w-2/3 w-full flex flex-col h-full justify-between">
+                            <p class="text-sm text-charcoal leading-relaxed mb-8 font-medium">
+                                A deep-dive commercial assessment that moves past surface data into deep economics, competitor vulnerabilities, and tactical go-to-market execution.
+                            </p>
+
+                            <h5 class="text-xs font-bold text-charcoal mb-4 uppercase tracking-widest border-b border-charcoal/10 pb-2">4 Pillars of Deep Intel</h5>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                                <div>
+                                    <h6 class="text-sm font-bold text-burgundy mb-1 flex items-center"><i data-lucide="pie-chart" class="w-4 h-4 mr-2"></i> 1. Commercial Economics</h6>
+                                    <p class="text-xs text-charcoal-light leading-relaxed">Mapping the value chain to show where the money lives. You learn who captures margins, bottlenecks, and real TAM/SAM/SOM.</p>
+                                </div>
+                                <div>
+                                    <h6 class="text-sm font-bold text-burgundy mb-1 flex items-center"><i data-lucide="crosshair" class="w-4 h-4 mr-2"></i> 2. Competitor Vulnerabilities</h6>
+                                    <p class="text-xs text-charcoal-light leading-relaxed">An unvarnished ground reality. You learn the exact business models and weaknesses of top competitors, and local buyer triggers.</p>
+                                </div>
+                                <div>
+                                    <h6 class="text-sm font-bold text-burgundy mb-1 flex items-center"><i data-lucide="map" class="w-4 h-4 mr-2"></i> 3. Tactical GTM Blueprint</h6>
+                                    <p class="text-xs text-charcoal-light leading-relaxed">A localized roadmap skipping theory. You learn distribution structures, partnerships, and state-by-state execution nuances.</p>
+                                </div>
+                                <div>
+                                    <h6 class="text-sm font-bold text-burgundy mb-1 flex items-center"><i data-lucide="shield-alert" class="w-4 h-4 mr-2"></i> 4. Risk Shield & Decision</h6>
+                                    <p class="text-xs text-charcoal-light leading-relaxed">A brutal stress-test of your thesis. You learn regulatory speedbumps and get a definitive Go/No-Go framework for your board.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-charcoal/5 p-5 rounded-sm border border-charcoal/10 mb-8">
+                                <p class="text-[10px] font-bold text-charcoal mb-3 uppercase tracking-widest border-b border-charcoal/10 pb-2">Concrete Scenarios We Map</p>
+                                <div class="space-y-3">
+                                    <p class="text-xs text-charcoal-light leading-relaxed"><strong class="text-charcoal block mb-0.5">Market Expansion:</strong> "We are expanding our footprint from West Malaysia into Sabah and Sarawak—what does the local supply chain look like, and who controls the distribution?"</p>
+                                    <p class="text-xs text-charcoal-light leading-relaxed"><strong class="text-charcoal block mb-0.5">Independent Due Diligence:</strong> "Our family office is looking to acquire a local firm. We need a brutal, independent evaluation of their competitive moat before committing capital."</p>
+                                    <p class="text-xs text-charcoal-light leading-relaxed"><strong class="text-charcoal block mb-0.5">New Product Launch:</strong> "What are the specific buying behaviors of modern Malaysian consumers for our premium B2C product line, and how do we position against giants?"</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-parchment p-5 rounded-sm border-l-2 border-burgundy mt-auto">
+                                <p class="text-sm text-charcoal-light mb-4 italic">
+                                    <strong class="text-burgundy">When to use Tier II:</strong> This engagement is triggered when the question is no longer "Is this a good idea?" but rather "We are committed to moving forward, now we need the bulletproof strategy to ensure we win."
+                                </p>
+                                <p class="text-[10px] font-bold text-charcoal mb-3 uppercase tracking-widest border-t border-charcoal/10 pt-3">The 3 Core Deliverables</p>
+                                <ul class="text-sm text-charcoal-light space-y-3 list-none pl-1">
+                                    <li class="flex items-start">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-burgundy mr-2 shrink-0 mt-0.5"></i>
+                                        <span><strong class="text-charcoal">The Strategic Dossier:</strong> Highly structured, data-backed master document detailing value chains and competitive intel.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-burgundy mr-2 shrink-0 mt-0.5"></i>
+                                        <span><strong class="text-charcoal">The Executive Board Deck:</strong> Polished, high-impact presentation designed to align internal leadership or external investors.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i data-lucide="check-circle" class="w-4 h-4 text-burgundy mr-2 shrink-0 mt-0.5"></i>
+                                        <span><strong class="text-charcoal">The Action Matrix:</strong> Clear chronological checklist of your immediate strategic priorities and execution steps.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="bg-burgundy text-white p-8 md:p-12 rounded-sm shadow-lg text-center mt-4 mb-16 relative overflow-hidden">
+                    <div class="relative z-10">
+                        <h4 class="font-serif text-2xl md:text-3xl font-bold mb-4">Let's Discuss Your Context</h4>
+                        <p class="text-sm md:text-base font-light text-white/80 max-w-3xl mx-auto mb-8 leading-relaxed">
+                            No two strategic pivots or market entries are the same. Send me a brief overview of your current operational or investment context, and we can define which level of intelligence will deliver the highest ROI for your team.
+                        </p>
+                        <a href="mailto:junyuanlee31@gmail.com" class="inline-flex items-center justify-center px-8 py-4 bg-white text-burgundy text-sm font-bold uppercase tracking-widest hover:bg-parchment transition-colors duration-300 rounded-sm">
+                            <i data-lucide="mail" class="w-4 h-4 mr-2"></i> Contact Me For A Briefing
+                        </a>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+    </main>
+
+    <footer id="contact" class="bg-charcoal text-parchment py-16 border-t border-burgundy/30 mt-auto">
+        <div class="max-w-[1200px] mx-auto px-6 text-center">
+            <h2 class="font-serif text-3xl mb-8">Let's Connect</h2>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 mb-12">
+                <a href="mailto:junyuanlee31@gmail.com" class="flex items-center text-sm text-parchment-dark hover:text-white transition-colors group px-6 py-3 border border-white/10 hover:border-burgundy-light rounded-sm">
+                    <i data-lucide="mail" class="w-4 h-4 mr-3 group-hover:text-burgundy-light transition-colors"></i> junyuanlee31@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/lee-jun-yuan-80a78a254/" target="_blank" rel="noopener noreferrer" class="flex items-center text-sm text-parchment-dark hover:text-white transition-colors group px-6 py-3 border border-white/10 hover:border-burgundy-light rounded-sm">
+                    <i data-lucide="linkedin" class="w-4 h-4 mr-3 group-hover:text-burgundy-light transition-colors"></i> LinkedIn Profile
+                </a>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-parchment-dark/60 font-light">
+                <p>&copy; 2026 Zavier Lee. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page-section');
+            let isFirstLoad = true;
+
+            // Scroll Reveal Animation Logic (Only targets active page)
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 50;
+                
+                document.querySelectorAll('.page-section.active .reveal').forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+
+            // Page Switcher Logic
+            function showPage(pageId) {
+                if (!document.getElementById(pageId)) pageId = 'profile';
+
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                    page.querySelectorAll('.reveal').forEach(r => r.classList.remove('active'));
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('text-burgundy', 'font-semibold');
+                });
+
+                const targetPage = document.getElementById(pageId);
+                targetPage.classList.add('active');
+
+                if (!isFirstLoad) {
+                    window.scrollTo(0, 0);
+                }
+                isFirstLoad = false;
+
+                const activeLinks = document.querySelectorAll(`.nav-link[href="#${pageId}"]`);
+                activeLinks.forEach(link => link.classList.add('text-burgundy', 'font-semibold'));
+
+                setTimeout(revealOnScroll, 50);
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = href.substring(1);
+                        history.pushState(null, null, `#${targetId}`);
+                        showPage(targetId);
+                    }
+                });
+            });
+
+            const initialHash = window.location.hash.substring(1);
+            showPage(initialHash || 'profile');
+
+            window.addEventListener('popstate', () => {
+                const hash = window.location.hash.substring(1);
+                showPage(hash || 'profile');
+            });
+
+            window.addEventListener('scroll', revealOnScroll);
+        });
+    </script>
+</body>
+</html>
